@@ -6,7 +6,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "analyze": "nuxt build --analyze"
   },
   "dependencies": {
     "@nuxtjs/i18n": "^7.2.2",
@@ -15,9 +16,21 @@
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
+    "autoprefixer": "^10.4.0",
+    "browser-sync": "^2.27.7",
+    "gulp": "^4.0.2",
+    "gulp-beautify": "^3.0.0",
+    "gulp-cssbeautify": "^3.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "node-sass": "^7.0.0",
     "webpack": "^4.46.0"
   },
   "devDependencies": {
-    "nuxt-windicss": "^2"
+    "node-sass": "^7.0.1",
+    "nuxt-windicss": "^2",
+    "sass-loader": "10",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.45.0"
   }
 }
