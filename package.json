@@ -17,6 +17,7 @@
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
     "autoprefixer": "^10.4.0",
+    "vue-slick-carousel": "^1.0.6",
     "browser-sync": "^2.27.7",
     "gulp": "^4.0.2",
     "gulp-beautify": "^3.0.0",

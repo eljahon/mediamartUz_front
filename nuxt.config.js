@@ -19,6 +19,7 @@ import I18n from './locales/i18n-config'
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    "@/assets/plugins/bootstrap/css/bootstrap.min.css",
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

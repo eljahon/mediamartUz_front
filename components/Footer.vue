@@ -137,25 +137,39 @@
 					</div>
 				</div>
 			</div>
+			<a @click="scrollTop" id="back-to-top" :style="[{display: showScroll ?  'inline' : 'none'}]"><i class="fa fa-rocket"></i></a>
 		</footer>
 	</section>
 </div>
 </template>
 
 <script>
+import "@/assets/css/style.css"
+import "@/assets/css/icons.css"
 export default {
   name: "Footer",
   data () {
     return {
+		showScroll: false,
       Categories: [{name: 'RealEstate'},{name:"Spa"},{name: 'Education'}, {name:'Mediation'}, {name:'Restaurent'}, {name:'Backery'}, {name:'Automobiles'}],
       Payments: [{iconName: 'fa fa-cc-amex'}, {iconName: 'fa fa-cc-visa'}, {iconName: 'fa fa-credit-card-alt'},{iconName: 'fa fa-cc-mastercard'}, {iconName: 'fa fa-cc-paypal'}]
     }
+  },
+	
+  methods: {
+	  scrollTop () {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  },
+ checkScrollTop() {
+    if (!this.showScroll && window.pageYOffset > 400) {
+      this.showScroll = true
+    } else if (this.showScroll && window.pageYOffset <= 400) {
+     this.showScroll = false
+    }
   }
+  },
+mounted () {
+	window.addEventListener('scroll', this.checkScrollTop)
+}
 }
 </script>
-
-<style scoped>
-@import "~/assets/plugins/bootstrap/css/bootstrap.min.css";
-@import "../assets/css/style.css";
-@import "../assets/css/icons.css";
-</style>

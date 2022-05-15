@@ -34,7 +34,7 @@
 										<a href="javascript:void(0)" class="callnumber text-dark"><span><i class="fa fa-phone me-1"></i>:
 												+425 345 8765</span></a>
 									</li>
-									<li class="select-country me-5">
+									<!-- <li class="select-country me-5">
 										<select class="form-control select2-flag-search"
 											data-placeholder="Select Country">
 											<option value="UM">United States of America</option>
@@ -176,15 +176,15 @@
 											<option value="ZM">Zambia</option>
 											<option value="ZW">Zimbabwe</option>
 										</select>
-									</li>
-									<li class="dropdown me-5">
+									</li> -->
+									<!-- <li class="dropdown me-5">
 										<a href="javascript:void(0)" class="text-dark" data-bs-toggle="dropdown"><span> Language <i
 													class="fa fa-caret-down text-muted"></i></span> </a>
 										<div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" v-for="(lang, index) in langs" :key="index">
 											<a  class="dropdown-item">
 											{{lang.lang}}
 											</a>
-									
+
 										</div>
 									</li>
 									<li class="dropdown">
@@ -204,7 +204,7 @@
 												GBP
 											</a>
 										</div>
-									</li>
+									</li> -->
 								</ul>
 							</div>
 						</div>
@@ -274,7 +274,7 @@
 				<!--Nav-->
 				<nav class="horizontalMenu clearfix d-md-flex">
 					<ul class="horizontalMenu-list">
-						<li><a href="javascript:void(0)">Home <span class="fa fa-caret-down m-0"></span></a>
+						<li><a>Home <span class="fa fa-caret-down m-0"></span></a>
 							<ul class="sub-menu">
 								<li><a href="index.html">Home Style</a></li>
 								<li><a href="index2.html">Home Style 02</a></li>
@@ -440,12 +440,12 @@
 						</li>
 						<li><a href="contact.html"> Contact Us <span class="wsarrow"></span></a></li>
 						<li class="d-lg-none mt-5 pb-5 mt-lg-0">
-							<span><a class="btn btn-orange" href="ad-list.html">Add Listing</a></span>
+							<span><a class="btn btn-orange">Add Listing</a></span>
 						</li>
 					</ul>
 					<ul class="mb-0">
 						<li class="mt-2 d-none d-lg-flex">
-							<span><a class="btn btn-secondary ad-post" href="ad-list.html"><i
+							<span><a class="btn btn-secondary ad-post"><i
 										class="fa fa-plus text-white"></i> Add Listing</a></span>
 						</li>
 					</ul>
@@ -461,6 +461,8 @@
 </template>
 
 <script>
+import '@/assets/css/style.css'
+import "@/assets/css/icons.css"
 export default {
   name: "Header",
   data () {
@@ -470,9 +472,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-@import "~/assets/css/style.css";
-@import "~/assets/plugins/bootstrap/css/bootstrap.min.css";
-@import "~/assets/css/icons.css";
-</style>
