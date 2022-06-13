@@ -1,67 +1,27 @@
 <template>
-    <div>
-<section>
-		<div class="banner-1 cover-image sptb-2 sptb-tab bg-background2" data-bs-image-src="../assets/images/banners/banner1.jpg">
-			<div class="header-text text-1 mb-0">
-				<div class="container">
-					<div class="text-center text-white mb-7">
-						<h1 class="mb-1">Welcome To The Biggest Business Directory</h1>
-						<p>It is a long established fact that a reader will be distracted by the readable.</p>
-					</div>
-					<div class="row">
-						<div class="col-xl-10 col-lg-12 col-md-12 d-block mx-auto">
-							<div class="search-background py-3 px-4 bg-white-transparent">
-								<div class="form row row-sm">
-									<div class="form-group col-xl-4 col-lg-3 col-md-12 mb-0">
-										<input type="text" class="form-control input-lg keywords-input" id="text4"
-											placeholder=" Phrase or Keywords">
-									</div>
-									<div class="form-group col-xl-3 col-lg-3 col-md-12 mb-0">
-										<input type="text" class="form-control input-lg location-input" id="text5"
-											placeholder="Enter Location">
-										<span><img src="../assets/images/svgs/gps.svg" class="location-gps"
-												alt="img"></span>
-									</div>
-									<div class="form-group col-xl-3 col-lg-3 col-md-12 select2-lg mb-0">
-										<select class="form-control select2-show-search  border-bottom-0"
-											data-placeholder="Select Category">
-											<optgroup label="Categories">
-												<option>Select Category</option>
-												<option value="0">All Categories</option>
-												<option value="1">Hotels</option>
-												<option value="2">Restaurant</option>
-												<option value="3">Events</option>
-												<option value="4">Cinema</option>
-												<option value="5">Gym</option>
-												<option value="6">Shop & Store</option>
-												<option value="7">Tours & Travels</option>
-												<option value="8">Cafe</option>
-												<option value="9">Mobile Store</option>
-												<option value="10">College</option>
-											</optgroup>
-										</select>
-									</div>
-									<div class="col-xl-2 col-lg-3 col-md-12 mb-0">
-										<a href="javascript:void(0)" class="btn btn-lg btn-block btn-secondary">Search Here</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div><!-- /header-text -->
-		</div>
-	</section>  
-      </div>
+  <div>
+    <SeachInputs data-aos="zoom-in" data-aos-duration="1000"/>
+    <CategoriesCarussel data-aos="fade-up" data-aos-duration="1000"/>
+    <Agencies data-aos="zoom-in-up" data-aos-duration="1000" />
+    <Staticticka data-aos="zoom-in-up" data-aos-duration="1000"/>
+    <Latestblog data-aos="zoom-in-up" data-aos-duration="1000"/>
+    <Influencers/>
+    <!--    <LeafletMaps data-aos="zoom-in" data-aos-duration="1000"/>-->
+  </div>
 
 </template>
 
 <script>
-import '@/assets/css/style.css'
-import "@/assets/css/icons.css"
-import SectionSlider from './SectionSlider.vue'
-    export default {
-    components: { SectionSlider }
+import MixinsAos from '@/mixns.js/aos'
+import CategoriesCarussel from "@/my-components/homePage/CategoriesCarussel";
+import SeachInputs from "@/my-components/homePage/SeachInputs";
+import Staticticka from "@/my-components/homePage/Staticticka";
+import Agencies from "@/my-components/agencies/Agencies.vue"
+import Latestblog from "@/my-components/latestblog/Latestblog";
+import Influencers from "@/my-components/influencers/Influencers";
+export default {
+  components: {Staticticka, CategoriesCarussel,Agencies, SeachInputs, Latestblog, Influencers},
+  mixins: [MixinsAos]
 }
 </script>
 

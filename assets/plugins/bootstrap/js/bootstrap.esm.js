@@ -1598,7 +1598,7 @@ EventHandler.on(window, EVENT_LOAD_DATA_API$2, () => {
  * ------------------------------------------------------------------------
  * jQuery
  * ------------------------------------------------------------------------
- * add .Carousel to jQuery only if jQuery is present
+ * add .carousel to jQuery only if jQuery is present
  */
 
 defineJQueryPlugin(Carousel);
@@ -3114,7 +3114,7 @@ EventHandler.on(document, EVENT_CLICK_DATA_API$2, SELECTOR_DATA_TOGGLE$2, functi
 
   EventHandler.one(target, EVENT_SHOW$3, showEvent => {
     if (showEvent.defaultPrevented) {
-      // only register focus restorer if modal will actually get shown
+      // only signUp focus restorer if modal will actually get shown
       return;
     }
 

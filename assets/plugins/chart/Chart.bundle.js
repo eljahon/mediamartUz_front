@@ -1445,11 +1445,11 @@ for (var func in conversions) {
   // export rgb2hsl and ["rgb"]["hsl"]
   convert[from] = convert[from] || {};
 
-  convert[from][to] = convert[func] = (function(func) { 
+  convert[from][to] = convert[func] = (function(func) {
     return function(arg) {
       if (typeof arg == "number")
         arg = Array.prototype.slice.call(arguments);
-      
+
       var val = conversions[func](arg);
       if (typeof val == "string" || val === undefined)
         return val; // keyword
@@ -1477,12 +1477,12 @@ Converter.prototype.routeSpace = function(space, args) {
    }
    // color.rgb(10, 10, 10)
    if (typeof values == "number") {
-      values = Array.prototype.slice.call(args);        
+      values = Array.prototype.slice.call(args);
    }
 
    return this.setValues(space, values);
 };
-  
+
 /* Set the values for a space, invalidating cache */
 Converter.prototype.setValues = function(space, values) {
    this.space = space;
@@ -6092,7 +6092,7 @@ module.exports = function(Chart) {
 	 */
 
 	// The layout service is very self explanatory.  It's responsible for the layout within a chart.
-	// Scales, Legends and Plugins all rely on the layout service and can easily register to be placed anywhere they need
+	// Scales, Legends and Plugins all rely on the layout service and can easily signUp to be placed anywhere they need
 	// It is this service's responsibility of carrying out that layout.
 	Chart.layoutService = {
 		defaults: {},
@@ -6184,7 +6184,7 @@ module.exports = function(Chart) {
 			// The areas L1 and L2 are the left axes. R1 is the right axis, T1 is the top axis and
 			// B1 is the bottom axis
 			// There are also 4 quadrant-like locations (left to right instead of clockwise) reserved for chart overlays
-			// These locations are single-box locations only, when trying to register a chartArea location that is already taken,
+			// These locations are single-box locations only, when trying to signUp a chartArea location that is already taken,
 			// an error will be thrown.
 			//
 			// |----------------------------------------------------|
@@ -6856,7 +6856,7 @@ module.exports = function(Chart) {
 
 	/**
 	 * Provided for backward compatibility, inheriting from Chart.PlugingBase has no
-	 * effect, instead simply create/register plugins via plain JavaScript objects.
+	 * effect, instead simply create/signUp plugins via plain JavaScript objects.
 	 * @interface Chart.PluginBase
 	 * @deprecated since version 2.5.0
 	 * @todo remove at version 3
@@ -7807,7 +7807,7 @@ var helpers = require(45);
 module.exports = function(Chart) {
 
 	Chart.scaleService = {
-		// Scale registration object. Extensions can register new scale types (such as log or DB scales) and then
+		// Scale registration object. Extensions can signUp new scale types (such as log or DB scales) and then
 		// use the new chart options to grab the correct scale
 		constructors: {},
 		// Use a registration function so that we can move to an ES6 map when we no longer need to support

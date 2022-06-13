@@ -1,6 +1,6 @@
 /*
  * bootstrap-tagsinput v0.8.0
- * 
+ *
  */
 
 (function ($) {
@@ -135,7 +135,7 @@
       if (beforeItemAddEvent.cancel)
         return;
 
-      // register item in internal array and map
+      // signUp item in internal array and map
       self.itemsArray.push(item);
 
       // add a tag element

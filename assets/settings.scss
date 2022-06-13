@@ -1,12 +1,20 @@
 .slider-header-main {
+  display: flex;
+  gap: 20px;
     .slick-next {
         width: 48px !important;
         height: 48px !important;
         border-radius: 50%;
         background-color: #f7f7fb;
         border: 1px solid #e6e6eb;
+      color:blue !important;
         &:hover {
             background-color: #ffffff;
+          &::before {
+            top: 6px;
+            color: blue;
+            right: 16px;
+          }
         }
     }
     &::before {
@@ -23,9 +31,14 @@
         z-index: 10000;
         &:hover {
             background-color: #ffffff;
+          &::before {
+            top: 6px;
+            color: blue;
+            right: 16px;
+          }
         }
     }
     .slick-arrow {
-        color:red
+        color:blue;
     }
 }

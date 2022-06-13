@@ -1,4 +1,4 @@
-import I18n from './locales/i18n-config'
+import {I18n} from './locales/i18n-config'
  export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -13,17 +13,20 @@ import I18n from './locales/i18n-config'
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: '~/assets/plugins/bootstrap/css/bootstrap.min.css' }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    "@/assets/plugins/bootstrap/css/bootstrap.min.css",
+    '~/assets/css/style.css',
+    '~/assets/css/icons.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    // { src: "~/plugins/flages.js", mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -37,6 +40,7 @@ import I18n from './locales/i18n-config'
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/i18n',
+    'nuxt-leaflet'
   ],
   i18n:I18n,
   // Build Configuration: https://go.nuxtjs.dev/config-build

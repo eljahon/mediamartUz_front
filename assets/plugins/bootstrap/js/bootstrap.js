@@ -1622,7 +1622,7 @@
    * ------------------------------------------------------------------------
    * jQuery
    * ------------------------------------------------------------------------
-   * add .Carousel to jQuery only if jQuery is present
+   * add .carousel to jQuery only if jQuery is present
    */
 
   defineJQueryPlugin(Carousel);
@@ -3138,7 +3138,7 @@
 
     EventHandler.one(target, EVENT_SHOW$3, showEvent => {
       if (showEvent.defaultPrevented) {
-        // only register focus restorer if modal will actually get shown
+        // only signUp focus restorer if modal will actually get shown
         return;
       }
 

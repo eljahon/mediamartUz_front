@@ -11,27 +11,20 @@
   },
   "dependencies": {
     "@nuxtjs/i18n": "^7.2.2",
+    "aos": "^2.3.4",
+    "autoprefixer": "^10.4.0",
     "core-js": "^3.19.3",
     "nuxt": "^2.15.8",
+    "nuxt-leaflet": "0.0.17",
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
-    "vue-template-compiler": "^2.6.14",
-    "autoprefixer": "^10.4.0",
     "vue-slick-carousel": "^1.0.6",
-    "browser-sync": "^2.27.7",
-    "gulp": "^4.0.2",
-    "gulp-beautify": "^3.0.0",
-    "gulp-cssbeautify": "^3.0.0",
-    "gulp-postcss": "^9.0.1",
-    "gulp-sourcemaps": "^3.0.0",
-    "node-sass": "^7.0.0",
+    "vue-template-compiler": "^2.6.14",
     "webpack": "^4.46.0"
   },
   "devDependencies": {
-    "node-sass": "^7.0.1",
     "nuxt-windicss": "^2",
-    "sass-loader": "10",
-    "gulp-sass": "^5.0.0",
-    "sass": "^1.45.0"
+    "sass": "^1.45.0",
+    "sass-loader": "10"
   }
 }

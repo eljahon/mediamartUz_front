@@ -407,7 +407,7 @@ module.exports = exports["default"];
  */
 
 /**
- * @fileoverview DataHandler implementation for the combination 
+ * @fileoverview DataHandler implementation for the combination
  * of error bars and fractions options.
  * @author David Eberlein (david.eberlein@ch.sauter-bc.com)
  */
@@ -527,7 +527,7 @@ module.exports = exports["default"];
  */
 
 /**
- * @fileoverview DataHandler base implementation for the "bar" 
+ * @fileoverview DataHandler base implementation for the "bar"
  * data formats. This implementation must be extended and the
  * extractSeries and rollingAverage must be implemented.
  * @author David Eberlein (david.eberlein@ch.sauter-bc.com)
@@ -564,13 +564,13 @@ BarsHandler.prototype = new _datahandler2['default']();
 //   (I get closure compiler errors if this isn't here.)
 /**
  * @override
- * @param {!Array.<Array>} rawData The raw data passed into dygraphs where 
+ * @param {!Array.<Array>} rawData The raw data passed into dygraphs where
  *     rawData[i] = [x,ySeries1,...,ySeriesN].
  * @param {!number} seriesIndex Index of the series to extract. All other
  *     series should be ignored.
  * @param {!DygraphOptions} options Dygraph options.
  * @return {Array.<[!number,?number,?]>} The series in the unified data format
- *     where series[i] = [x,y,{extras}]. 
+ *     where series[i] = [x,y,{extras}].
  */
 BarsHandler.prototype.extractSeries = function (rawData, seriesIndex, options) {
   // Not implemented here must be extended
@@ -578,7 +578,7 @@ BarsHandler.prototype.extractSeries = function (rawData, seriesIndex, options) {
 
 /**
  * @override
- * @param {!Array.<[!number,?number,?]>} series The series in the unified 
+ * @param {!Array.<[!number,?number,?]>} series The series in the unified
  *          data format where series[i] = [x,y,{extras}].
  * @param {!number} rollPeriod The number of points over which to average the data
  * @param {!DygraphOptions} options The dygraph options.
@@ -2780,7 +2780,7 @@ DygraphInteraction.defaultModel = {
       DygraphInteraction.startZoom(event, g, context);
     }
 
-    // Note: we register mousemove/mouseup on document to allow some leeway for
+    // Note: we signUp mousemove/mouseup on document to allow some leeway for
     // events to move outside of the chart. Interaction model events get
     // registered on the canvas, which is too small to allow this.
     var mousemove = function mousemove(event) {
@@ -6504,7 +6504,7 @@ this.plugins_ = [];var plugins=Dygraph.PLUGINS.concat(this.getOption('plugins'))
 // Plugin instances contain an activate method.
 var Plugin=plugins[i]; // either a constructor or an instance.
 var pluginInstance;if(typeof Plugin.activate !== 'undefined'){pluginInstance = Plugin;}else {pluginInstance = new Plugin();}var pluginDict={plugin:pluginInstance,events:{},options:{},pluginOptions:{}};var handlers=pluginInstance.activate(this);for(var eventName in handlers) {if(!handlers.hasOwnProperty(eventName))continue; // TODO(danvk): validate eventName.
-pluginDict.events[eventName] = handlers[eventName];}this.plugins_.push(pluginDict);} // At this point, plugins can no longer register event handlers.
+pluginDict.events[eventName] = handlers[eventName];}this.plugins_.push(pluginDict);} // At this point, plugins can no longer signUp event handlers.
 // Construct a map from event -> ordered list of [callback, plugin].
 for(var i=0;i < this.plugins_.length;i++) {var plugin_dict=this.plugins_[i];for(var eventName in plugin_dict.events) {if(!plugin_dict.events.hasOwnProperty(eventName))continue;var callback=plugin_dict.events[eventName];var pair=[plugin_dict.plugin,callback];if(!(eventName in this.eventListeners_)){this.eventListeners_[eventName] = [pair];}else {this.eventListeners_[eventName].push(pair);}}}this.createDragInterface_();this.start_();}; /**
  * Triggers a cascade of events to the various plugins which are interested in them.
@@ -6718,7 +6718,7 @@ this.graphDiv.appendChild(this.hidden_);this.graphDiv.appendChild(this.canvas_);
 this.layout_ = new _dygraphLayout2['default'](this);var dygraph=this;this.mouseMoveHandler_ = function(e){dygraph.mouseMove_(e);};this.mouseOutHandler_ = function(e){ // The mouse has left the chart if:
 // 1. e.target is inside the chart
 // 2. e.relatedTarget is outside the chart
-var target=e.target || e.fromElement;var relatedTarget=e.relatedTarget || e.toElement;if(utils.isNodeContainedBy(target,dygraph.graphDiv) && !utils.isNodeContainedBy(relatedTarget,dygraph.graphDiv)){dygraph.mouseOut_(e);}};this.addAndTrackEvent(window,'mouseout',this.mouseOutHandler_);this.addAndTrackEvent(this.mouseEventElement_,'mousemove',this.mouseMoveHandler_); // Don't recreate and register the resize handler on subsequent calls.
+var target=e.target || e.fromElement;var relatedTarget=e.relatedTarget || e.toElement;if(utils.isNodeContainedBy(target,dygraph.graphDiv) && !utils.isNodeContainedBy(relatedTarget,dygraph.graphDiv)){dygraph.mouseOut_(e);}};this.addAndTrackEvent(window,'mouseout',this.mouseOutHandler_);this.addAndTrackEvent(this.mouseEventElement_,'mousemove',this.mouseMoveHandler_); // Don't recreate and signUp the resize handler on subsequent calls.
 // This happens when the graph is resized.
 if(!this.resizeHandler_){this.resizeHandler_ = function(e){dygraph.resize();}; // Update when the window is resized.
 // TODO(danvk): drop frames depending on complexity of the chart.
@@ -7389,8 +7389,8 @@ Dygraph.GVizChart = _dygraphGviz2['default'];Dygraph.DASHED_LINE = utils.DASHED_
 
 },{"./datahandler/bars":5,"./datahandler/bars-custom":2,"./datahandler/bars-error":3,"./datahandler/bars-fractions":4,"./datahandler/default":8,"./datahandler/default-fractions":7,"./dygraph-canvas":9,"./dygraph-default-attrs":10,"./dygraph-gviz":11,"./dygraph-interaction-model":12,"./dygraph-layout":13,"./dygraph-options":15,"./dygraph-options-reference":14,"./dygraph-tickers":16,"./dygraph-utils":17,"./iframe-tarp":19,"./plugins/annotations":20,"./plugins/axes":21,"./plugins/chart-labels":22,"./plugins/grid":23,"./plugins/legend":24,"./plugins/range-selector":25,"_process":1}],19:[function(require,module,exports){
 /**
- * To create a "drag" interaction, you typically register a mousedown event
- * handler on the element where the drag begins. In that handler, you register a
+ * To create a "drag" interaction, you typically signUp a mousedown event
+ * handler on the element where the drag begins. In that handler, you signUp a
  * mouseup handler on the window to determine when the mouse is released,
  * wherever that release happens. This works well, except when the user releases
  * the mouse over an off-domain iframe. In that case, the mouseup event is
