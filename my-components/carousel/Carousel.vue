@@ -1,6 +1,8 @@
 <template>
   <VueSlickCarousel v-bind="settings">
-    <slot></slot>
+    <div class="container">
+      <slot></slot>
+    </div>
   </VueSlickCarousel>
 </template>
 
@@ -19,6 +21,7 @@ export default {
         dotsClass: 'slick-dots custom-dot-class',
         edgeFriction: 0.35,
         adaptiveHeight: true,
+        arrows: false,
         focusOnSelect:true,
         speed: 500,
         infinite: true,
