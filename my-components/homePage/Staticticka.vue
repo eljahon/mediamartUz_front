@@ -1,7 +1,7 @@
 <template>
 <div>
   <section>
-    <div class="about-1 cover-image sptb bg-background-color"
+    <div class="about-1 cover-image sptb bg-background-color bg-background2"
          data-bs-image-src="../assets/images/banners/banner5.jpg">
       <div class="content-text mb-0 text-white info">
         <div class="container">
@@ -28,3 +28,10 @@ export default {
   name: "Staticticka"
 }
 </script>
+
+<style scoped>
+.bg-background2 {
+  background-image: linear-gradient(87deg, var(--primary-09), var(--primary-10) 100%),
+                    url("../../assets/images/banners/banner1.jpg"); 
+}
+</style>

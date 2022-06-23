@@ -8,7 +8,7 @@
     </div>
     <div class="carousel-wrapper container mx-auto">
       <VueSlickCarousel ref="carousel" v-bind="settings">
-        <div v-for="(item, index) in 6" :key="index">
+        <div v-for="(item, index) in 12" :key="index">
           <div class="border rounded-lg card-body img-wrapper">
             <div class="cat-item text-center">
               <div class="cat-img category-svg">
@@ -56,20 +56,17 @@
   </section>
 </template>
 <script>
-import Carousel from "@/my-components/carousel/Carousel";
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
-// import "@/assets/settings.scss";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import PrevButtonSvg from "../../components/PrevButtonSvg.vue";
 import NextButtonSvg from "../../components/NextButtonSvg.vue";
 export default {
   components: {
-    Carousel,
     VueSlickCarousel,
     PrevButtonSvg,
-    NextButtonSvg
-},
+    NextButtonSvg,
+  },
   data() {
     return {
       settings: {
@@ -154,7 +151,7 @@ export default {
 };
 </script>
 
-<style lang="css">
+<style scoped>
 .img-wrapper {
   width: 265px;
   min-height: 200px;
