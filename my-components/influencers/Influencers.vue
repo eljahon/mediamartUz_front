@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <h3 class="widget-title mt-7 fs-16">Employers</h3>
+  <div class="pb-12 container">
+    <h3 class="widget-title mt-7 text-3xl text-center">Employers</h3>
     <hr class="widget-hr" />
-    <div class="carousel-wrapper">
-      <Carousel>
-        <div class="img-warpper" v-for="(item, index) in 6" :key="index">
+    <div class="carousel-wrapper p-0 bg-white rounded-lg">
+      <VueSlickCarousel ref="carousel" v-bind="settings">
+        <div class="img-wrapper" v-for="(item, index) in 6" :key="index">
           <div class="item">
             <!--          <div class="card mb-0">-->
             <div class="card-body">
@@ -44,31 +44,55 @@
             </div>
           </div>
         </div>
-      </Carousel>
+      </VueSlickCarousel>
+      <button class="button button-left" @click="showPrev">
+        <PrevButtonSvg class="w-1 h-2" />
+      </button>
+      <button class="button button-right" @click="showNext">
+        <NextButtonSvg class="w-1 h-2s" />
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-import Carousel from "@/my-components/carousel/Carousel";
+import VueSlickCarousel from "vue-slick-carousel";
+import "vue-slick-carousel/dist/vue-slick-carousel.css";
+import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
+import PrevButtonSvg from "../../components/PrevButtonSvg.vue";
+import NextButtonSvg from "../../components/NextButtonSvg.vue";
 export default {
-  name: "Influencers",
-  components: { Carousel },
+  components: {
+    VueSlickCarousel,
+    PrevButtonSvg,
+    NextButtonSvg,
+  },
+  data() {
+    return {
+      settings: {
+        dots: false,
+        dotsClass: "slick-dots custom-dot-class",
+        adaptiveHeight: true,
+        arrows: false,
+        focusOnSelect: true,
+        speed: 500,
+        infinite: true,
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        autoplay: true,
+      },
+    };
+  },
+  methods: {
+    handlePaging(value) {
+      this.activeSlide = value;
+    },
+    showNext() {
+      this.$refs.carousel.next();
+    },
+    showPrev() {
+      this.$refs.carousel.prev();
+    },
+  },
 };
 </script>
-
-<style scoped>
-.img-warpper {
-  margin: auto;
-  width: 200px;
-  height: 200px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-.carousel-wrapper {
-  padding: 10px;
-  height: 340px;
-  width: 80%;
-  margin: auto;
-  box-sizing: border-box;
-}
-</style>
