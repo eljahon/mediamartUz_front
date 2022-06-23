@@ -6,10 +6,10 @@
         Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula
       </p>
     </div>
-    <div class="carousel-wrapper">
+    <div class="carousel-wrapper container mx-auto">
       <VueSlickCarousel ref="carousel" v-bind="settings">
-        <div v-for="(item, index) in 6" :key="index">
-          <div class="card card-body img-wrapper">
+        <div v-for="(item, index) in 12" :key="index">
+          <div class="border rounded-lg card-body img-wrapper">
             <div class="cat-item text-center">
               <div class="cat-img category-svg">
                 <svg
@@ -47,29 +47,26 @@
         </div>
       </VueSlickCarousel>
       <button class="button button-left" @click="showPrev">
-        <PrevButtonSvg class="w-2 h-4" />
+        <PrevButtonSvg class="w-1 h-2" />
       </button>
       <button class="button button-right" @click="showNext">
-        <NextButtonSvg class="w-2 h-4" />
+        <NextButtonSvg class="w-1 h-2s" />
       </button>
     </div>
   </section>
 </template>
 <script>
-import Carousel from "@/my-components/carousel/Carousel";
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
-// import "@/assets/settings.scss";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import PrevButtonSvg from "../../components/PrevButtonSvg.vue";
 import NextButtonSvg from "../../components/NextButtonSvg.vue";
 export default {
   components: {
-    Carousel,
     VueSlickCarousel,
     PrevButtonSvg,
-    NextButtonSvg
-},
+    NextButtonSvg,
+  },
   data() {
     return {
       settings: {
@@ -82,6 +79,15 @@ export default {
         speed: 500,
         infinite: true,
         responsive: [
+          {
+            breakpoint: 10000,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: false,
+            },
+          },
           {
             breakpoint: 2048,
             settings: {
@@ -145,20 +151,17 @@ export default {
 };
 </script>
 
-<style lang="css">
+<style scoped>
 .img-wrapper {
-  margin: auto;
-  width: 200px;
-  height: 200px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 265px;
+  min-height: 200px;
+  margin: 0 12px;
+  height: 100%;
 }
 .carousel-wrapper {
   position: relative;
   padding: 10px;
   height: 250px;
-  width: 80%;
-  margin: auto;
-  box-sizing: border-box;
 }
 .button {
   padding: 13px 17px;
