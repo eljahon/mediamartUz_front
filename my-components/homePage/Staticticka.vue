@@ -28,9 +28,3 @@ export default {
   name: "Staticticka"
 }
 </script>
-
-<style scoped>
-. categoriy_list {
-
-}
-</style>

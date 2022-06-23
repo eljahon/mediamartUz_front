@@ -1,7 +1,7 @@
 <template>
 <div>
   <section>
-    <div class="banner-1 cover-image sptb-2 sptb-tab bg-background2">
+    <div class="banner-1 sptb-2 sptb-tab bg-background2">
       <div class="header-text text-1 mb-0">
         <div class="container">
           <div class="text-center text-white mb-7">
@@ -22,8 +22,8 @@
                     <span><img src="../../assets/images/svgs/gps.svg" class="location-gps"
                                alt="img"></span>
                   </div>
-                  <div class="form-group col-xl-3 col-lg-3 col-md-12 select2-lg mb-0">
-                    <select class="form-control select2-show-search  border-bottom-0"
+                  <div class="select-wrapper mb-0">
+                    <select class="select form-control"
                             data-placeholder="Select Category">
                       <optgroup label="Categories">
                         <option>Select Category</option>
@@ -61,6 +61,16 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+.bg-background2 {
+  background-image: linear-gradient(87deg, var(--primary-09), var(--primary-10) 100%),
+                    url("../../assets/images/banners/banner1.jpg"); 
+}
+.select-wrapper {
+  flex-grow: 1;
+}
+.select {
+  height: 100%;
+  max-height: 46px;
+}
 </style>

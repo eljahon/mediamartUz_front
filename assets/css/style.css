@@ -4579,8 +4579,6 @@ button#gdpr-cookie-advanced {
 }
 
 .card-body {
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
   margin: 0;
   padding: 1.5rem 1.5rem;
   position: relative;
@@ -45170,10 +45168,6 @@ div.dataTables_wrapper div.dataTables_filter input {
 .form-control[readonly] {
   background-color: var(--primary-bg-background);
   opacity: 1;
-}
-
-select.form-control:not([size]):not([multiple]) {
-  height: 2.425rem;
 }
 
 select.form-control:focus::-ms-value {

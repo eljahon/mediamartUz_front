@@ -6,10 +6,10 @@
         Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula
       </p>
     </div>
-    <div class="carousel-wrapper">
+    <div class="carousel-wrapper container mx-auto">
       <VueSlickCarousel ref="carousel" v-bind="settings">
         <div v-for="(item, index) in 6" :key="index">
-          <div class="card card-body img-wrapper">
+          <div class="border rounded-lg card-body img-wrapper">
             <div class="cat-item text-center">
               <div class="cat-img category-svg">
                 <svg
@@ -47,10 +47,10 @@
         </div>
       </VueSlickCarousel>
       <button class="button button-left" @click="showPrev">
-        <PrevButtonSvg class="w-2 h-4" />
+        <PrevButtonSvg class="w-1 h-2" />
       </button>
       <button class="button button-right" @click="showNext">
-        <NextButtonSvg class="w-2 h-4" />
+        <NextButtonSvg class="w-1 h-2s" />
       </button>
     </div>
   </section>
@@ -82,6 +82,15 @@ export default {
         speed: 500,
         infinite: true,
         responsive: [
+          {
+            breakpoint: 10000,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: false,
+            },
+          },
           {
             breakpoint: 2048,
             settings: {
@@ -147,18 +156,15 @@ export default {
 
 <style lang="css">
 .img-wrapper {
-  margin: auto;
-  width: 200px;
-  height: 200px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 265px;
+  min-height: 200px;
+  margin: 0 12px;
+  height: 100%;
 }
 .carousel-wrapper {
   position: relative;
   padding: 10px;
   height: 250px;
-  width: 80%;
-  margin: auto;
-  box-sizing: border-box;
 }
 .button {
   padding: 13px 17px;
