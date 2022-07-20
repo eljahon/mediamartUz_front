@@ -8,11 +8,8 @@
           Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula
         </p>
       </div>
-      <div
-        id="myCarousel1"
-        class="container carousel-wrapper owl-carousel-icons2 pb-5"
-      >
-        <VueSlickCarousel ref="carousel" v-bind="settings">
+      <div id="myCarousel1" class=" owl-carousel-icons2">
+<!--        <Carousel>-->
           <div v-for="(item, index) in 4" :key="index" class="container">
             <div class="item agents-wrapper">
               <div class="card overflow-hidden">
@@ -83,6 +80,7 @@
               </div>
             </div>
           </div>
+<<<<<<< Updated upstream
         </VueSlickCarousel>
         <button class="button button-left" @click="showPrev">
           <PrevButtonSvg class="w-1 h-2" />
@@ -90,6 +88,9 @@
         <button class="button button-right" @click="showNext">
           <NextButtonSvg class="w-1 h-2s" />
         </button>
+=======
+<!--        </Carousel>-->
+>>>>>>> Stashed changes
       </div>
       <!--    </div>-->
     </section>

@@ -93,8 +93,8 @@
 					<a id="horizontal-navtoggle" class="animated-arrow"><span></span></a>
 					<span class="smllogo">
             <a href="index.html" class="d-flex logo-height mobile-logo logo-svg">
-						<img src="../assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="Bizdire logo">
-						<img src="../assets/images/brand/logo1.png" class="header-brand-img desktop-dark" alt="Bizdire logo">
+						<img src="~/assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="Bizdire logo">
+						<img src="~/assets/images/brand/logo1.png" class="header-brand-img desktop-dark" alt="Bizdire logo">
             </a>
 					</span>
 					<a href="ad-list.html" class="callusbtn"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
@@ -103,7 +103,7 @@
 		</div>
 		<!-- /Mobile Header -->
 
-		<div class="horizontal-main bg-dark-transparent clearfix">
+		<div class="horizontal-main bg-dark-transparent clearfix" :class="{'activeClass': showScroll}">
 			<div class=" header-style horizontal-mainwrapper container clearfix">
 				<!--Nav-->
 				<nav class="horizontalMenu clearfix d-md-flex">
@@ -226,6 +226,7 @@ export default {
   name: "Header",
   data () {
     return {
+		showScroll: false,
       langs: [{label: "English", value: 'en'}, {label: "Russian", value: 'ru'}, {label: "Uzbek", value: 'uz'}]
     }
   },
@@ -233,7 +234,29 @@ export default {
     LangChanges (event) {
       console.log();
       this.$router.push(this.switchLocalePath(`${event.target.value}`))
+    },
+	 checkScrollTop() {
+    if (!this.showScroll && window.pageYOffset >95) {
+      this.showScroll = true
+    } else if (this.showScroll && window.pageYOffset <95) {
+     this.showScroll = false
     }
   }
+  },
+  mounted () {
+	window.addEventListener('scroll', this.checkScrollTop)
+}
+  
 }
 </script>
+<style>
+.activeClass {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 80px;
+	padding-right: 0.75rem;
+    padding-left: 0.75rem;
+	z-index:10000;
+}
+</style>

@@ -1,6 +1,6 @@
-import {uz} from './uz'
-import {ru} from './ru'
-import {en} from './en'
+import uz from './uz.json'
+import ru from './ru.json'
+import en from './en.jsson'
 export const I18n = {
   locales: ['en', 'ru', 'uz'],
     defaultLocale: 'en',
